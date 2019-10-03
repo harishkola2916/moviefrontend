@@ -1,0 +1,39 @@
+<div class="card">
+        <div class="card-header">
+                {{movieTitle}}
+        </div>
+        <div class="card-body">              
+                <div class="row">
+                        <div class="col-md-2">
+                          Filter by:
+                        </div>
+                        <div class="col-md-4">
+                          <input [(ngModel)]="listFilter" type="text"/>
+                        </div>
+                </div>
+                <div class="row">
+                        <div class="col-md-2">
+                          Filtered by: {{listFilter}}
+                        </div>
+                </div>
+                <div class="table-responsive-sm">
+                        <table class="table" *ngIf = 'movies && movies.length'>
+                                <thead>
+                                        <tr>
+                                          <th scope="col"><button class = "btn btn-primary" (click)= 'toggleTitle()'>{{showTitle ? 'Hide' : 'Show'}} Title</button></th>
+                                          <th scope="col">Movie Id</th>
+                                          <th scope="col">Movie Name</th>
+                                          <th scope="col">Movie Rating</th>
+                                        </tr>
+                                </thead>
+                                <tr *ngFor = 'let movie of filterMovies'>
+                                    <td><img [title]='movie.movieName' *ngIf = 'showTitle'></td>
+                                    <td>{{movie.movieId}}</td>
+                                    <td><a [routerLink] = "['/movies',movie.movieId]">{{movie.movieName}}</a></td>
+                                    <!--<td>{{movie.movieRating}}</td>-->
+                                    <td><mv-star [rating]='movie.movieRating' (ratingClicked)='onRatingClicked($event)'></mv-star></td>
+                                </tr>
+                        </table>
+                 </div>
+        </div>
+</div>

@@ -1,0 +1,26 @@
+[
+  {"movieId" : 2,
+    "movieName" :"Terminator",
+    "movieRating" : 4.2
+    },
+    {
+        "movieId" : 4,
+        "movieName" : "Avengers",
+        "movieRating" : 10
+    },
+    {
+        "movieId" : 5,
+        "movieName" : "Game Over",
+        "movieRating" : 7.8
+    },
+    {
+      "movieId" : 6,
+      "movieName" : "Ring",
+      "movieRating" : 6.8
+  },
+  {
+    "movieId" : 7,
+    "movieName" : "Jexi",
+    "movieRating" : 5.8
+}
+]
